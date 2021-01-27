@@ -1,18 +1,20 @@
 import random
-number = random.randint(1, 100)
+start = input('請決定最小值：') 
+end= input('請決定最大值：')
+number = random.randint(int(start), int(end))
 count = 0
 while True:
 	count += 1
-	guess = input('請在1～100間猜一個數字')
+	guess = input('請在決定的區間內猜一個數字')
 	guess =int(guess)
 	if guess == number:
 		print('猜對了！！')
 		print('這是你猜的第', count, '次')
 		break
-	elif guess < number and guess > 0:
+	elif guess < number and guess > int(start):
 		print('比數字小')
-	elif guess > number and guess <= 100:
+	elif guess > number and guess <= int(end):
 		print('比數字大')
 	else:
-		print('只能猜1～100的數字')
+		print('只能猜區間內的數字')
 	print('這是你猜的第', count, '次')
